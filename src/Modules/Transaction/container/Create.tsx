@@ -3,7 +3,10 @@ import { View, Text } from 'react-native';
 import { Picker, DatePicker } from 'native-base';
 import { connect } from 'react-redux';
 
+// Import actions
 import { getItems } from '../../Items/Ducks';
+import { getCategoriesByItem } from '../../Categories/Ducks'
+
 
 class Create extends Component {
     state = {
@@ -12,19 +15,17 @@ class Create extends Component {
     }    
 
     componentDidMount() {
-        console.log("HELLO");
         this.props.getItems();
+        this.props.getCategoriesByItem(1);
     }
 
     setDate = (date: string) => {
-        console.log(date);
         this.setState({
             chosenDate: date
         })
     }
 
     renderPickerItems = (items: any[]) => {
-        console.log('items', items);
 
         return items.map(item => {
             return (
@@ -51,6 +52,7 @@ class Create extends Component {
                     placeHolderTextStyle={{ color: "#d3d3d3" }}
                     onDateChange={this.setDate}
                 />
+                
                 <Picker
                     selectedValue={this.state.language}
                     style={{ height: 50, width: '100%' }}
@@ -59,8 +61,6 @@ class Create extends Component {
                     <Picker.Item label="Select" value="" />
                     {this.renderPickerItems(this.props.items)}
                 </Picker>
-
-
             </View>
         );
     }
@@ -73,5 +73,6 @@ const mapStateToProps = (state: any) => {
 }
 
 export default connect(mapStateToProps, {
-    getItems
+    getItems,
+    getCategoriesByItem
 })(Create);
