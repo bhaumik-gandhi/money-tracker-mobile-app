@@ -30,9 +30,11 @@ class Signup extends Component {
                     />
                     <InputElement 
                         label = 'Email'
+                        keyboardType='email-address'
                     />
                     <InputElement 
                         label = 'Password'
+                        secureTextEntry={true}
                     />
                 </View>
 

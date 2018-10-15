@@ -31,9 +31,11 @@ class Login extends Component {
                 <View style={inputContainer}>
                     <InputElement 
                         label = 'Email'
+                        keyboardType='email-address'
                     />
                     <InputElement 
                         label = 'Password'
+                        secureTextEntry={true}
                     />
                 </View>
 

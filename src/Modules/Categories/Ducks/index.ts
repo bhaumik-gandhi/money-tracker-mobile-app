@@ -11,15 +11,14 @@ export const getCategoriesByItem =  (itemId: number) => {
                 variables: {
                     itemId
                 }
-            })
-            console.log('CATEGORIES', data);
+            });
             
             dispatch({
                 type: GET_CATEGORIES,
                 payload: data.categories || []
             });
         } catch (e) {
-            console.error(e);
+            console.error('getCategoriesByItem', e);
         }
     }
 }

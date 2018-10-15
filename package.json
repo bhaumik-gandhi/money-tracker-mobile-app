@@ -60,6 +60,8 @@
     "react-apollo": "^2.2.4",
     "react-native": "~0.55.2",
     "react-native-elements": "^1.0.0-beta6",
+    "react-native-flexi-radio-button": "^0.2.2",
+    "react-native-simple-radio-button": "^2.7.3",
     "react-navigation": "^2.17.0",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",

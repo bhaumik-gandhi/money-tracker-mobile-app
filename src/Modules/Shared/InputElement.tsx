@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet , TextInput, View, Text } from 'react-native';
 
 const InputElement = (props: any) => {
-    const { label } = props;
+    const { label, keyboardType = 'default', placeholder = '', secureTextEntry = false, onChangeText = () => {} } = props;
     const { inputStyle, containerStyle, inputContainer } = styles;
 
     return (
@@ -14,6 +14,10 @@ const InputElement = (props: any) => {
                 <TextInput
                     style={inputStyle}            
                     underlineColorAndroid='transparent'
+                    keyboardType= { keyboardType}
+                    placeholder={placeholder}
+                    secureTextEntry={secureTextEntry}
+                    onChangeText={onChangeText}
                 />
             </View>
         </View>
